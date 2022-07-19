@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import axios from "axios";
+import { CSVLink } from "react-csv";
 
 const TiketList = () => {
   const [users, setUsers] = useState([]);
+  const [exportData, setExportData] = useState([]);
   const getUser = async () => {
     const res = await axios.get("http://localhost:5000/users");
     setUsers(res.data);
@@ -39,6 +41,14 @@ const TiketList = () => {
                 </p>
               </Link>
               <Link
+                to="/Pricing"
+                className="inline-flex sm:ml-3 mt-4 sm:mt-0 items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded"
+              >
+                <p className="text-sm font-medium leading-none text-white">
+                  Kelas
+                </p>
+              </Link>
+              <Link
                 to="/addtiket"
                 className="inline-flex sm:ml-3 mt-4 sm:mt-0 items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded"
               >
@@ -46,6 +56,14 @@ const TiketList = () => {
                   New Tiket
                 </p>
               </Link>
+              <CSVLink
+                className="inline-flex sm:ml-3 mt-4 sm:mt-0 items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded"
+                data={users}
+              >
+                <p className="text-sm font-medium leading-none text-white">
+                  Export Data
+                </p>
+              </CSVLink>
             </div>
           </div>
         </div>

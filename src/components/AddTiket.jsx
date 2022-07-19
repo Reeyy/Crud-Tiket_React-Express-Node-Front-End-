@@ -4,8 +4,8 @@ import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 const AddTiket = () => {
   const [name, setName] = useState("");
-  const [nomorHp, setNomorHp] = useState();
-  const [nomorKtp, setNomorKtp] = useState();
+  const [nomorHp, setNomorHp] = useState(0);
+  const [nomorKtp, setNomorKtp] = useState(0);
   const [kelas, setKelas] = useState("ekonomi");
   const [jadwal, setJadwal] = useState("");
   const [jumlahPenumpang, setJumlahPenumpang] = useState(0);
@@ -37,11 +37,11 @@ const AddTiket = () => {
   const handlerKelas = (e) => {
     setKelas(e.target.value);
     if (e.target.value === "ekonomi") {
-      setHargaTiket(20000);
+      setHargaTiket(200000);
     } else if (e.target.value === "bisnis") {
-      setHargaTiket(30000);
+      setHargaTiket(300000);
     } else if (e.target.value === "eksekutif") {
-      setHargaTiket(40000);
+      setHargaTiket(400000);
     } else {
       return null;
     }
@@ -53,7 +53,6 @@ const AddTiket = () => {
   };
 
   useEffect(() => {
-    console.log(kelas);
     const handlerTotalBayar = () => {
       const totalHargaLansia = jumlahPenumpangLansia * hargaTiket;
       const totalHargaDiskon = totalHargaLansia - totalHargaLansia * 0.1;
@@ -141,7 +140,7 @@ const AddTiket = () => {
           <div className="mt-12 md:flex items-center">
             <div className="flex flex-col">
               <label className="mb-3 text-sm leading-none text-gray-800">
-                jumlah Penumpang
+                Jumlah Penumpang
               </label>
               <input
                 value={jumlahPenumpang}
@@ -157,7 +156,7 @@ const AddTiket = () => {
           <div className="mt-12 md:flex items-center">
             <div className="flex flex-col">
               <label className="mb-3 text-sm leading-none text-gray-800">
-                jumlah Penumpang Lansia
+                Jumlah Penumpang Lansia ( Umur 60+)
               </label>
               <input
                 value={jumlahPenumpangLansia}
@@ -175,7 +174,7 @@ const AddTiket = () => {
           <div className="mt-12 md:flex items-center">
             <div className="flex flex-col">
               <label className="mb-3 text-sm leading-none text-gray-800">
-                harga Tiket
+                Harga Tiket
               </label>
               <input
                 readOnly={true}
@@ -201,6 +200,20 @@ const AddTiket = () => {
                 className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200"
               />
             </div>
+          </div>
+          <div className="flex items-center mb-4 mt-6">
+            <input
+              type="checkbox"
+              className="bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded"
+              required
+            />
+            <label
+              for="checkbox-1"
+              className="text-sm ml-3 font-medium text-gray-900"
+            >
+              Saya atau rombongan telah membaca, memahami, dan setuju
+              berdasarkan syarat dan ketentuan yang telah di terapkan
+            </label>
           </div>
           <div className="flex space-x-4">
             <div className="flex items-center justify-center py-4 px-7 focus:outline-none bg-white border rounded border-gray-400 mt-7 md:mt-14 hover:bg-gray-100  focus:ring-2 focus:ring-offset-2 focus:ring-gray-700">

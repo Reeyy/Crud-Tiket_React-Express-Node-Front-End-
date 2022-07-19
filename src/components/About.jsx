@@ -25,7 +25,7 @@ const About = () => {
               <div className="h-48 md:h-64 lg:h-72 sm:block hidden rounded relative">
                 <img
                   className="rounded inset-0 sm:w-72 w-full h-full object-cover object-top xl:object-center"
-                  src="https://i.ibb.co/qRfFZMt/michael-dam-m-EZ3-Po-FGs-k-unsplash-1.png"
+                  src="https://images.unsplash.com/photo-1589395241612-86d52ec4b9f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
                   alt="bus"
                 />
                 <div className="px-6 py-4 bg-white absolute rounded-tr left-0 bottom-0">
@@ -33,14 +33,14 @@ const About = () => {
                     Ekonomi
                   </h5>
                   <p className="text-base font-semibold leading-none text-gray-600">
-                    <b>Rp.</b>10000
+                    <b>Rp.</b>200.000
                   </p>
                 </div>
               </div>
               <div className="h-48 md:h-64 lg:h-72 rounded sm:block hidden relative sm:ml-6 sm:mt-0 mt-4">
                 <img
                   className=" rounded inset-0 w-full  h-full object-cover object-center"
-                  src="https://i.ibb.co/CVPZJXC/pexels-italo-melo-2379004-1.png"
+                  src="https://images.unsplash.com/photo-1610290621034-3e4754ada6ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
                   alt="bus"
                 />
 
@@ -49,7 +49,7 @@ const About = () => {
                     Bisnis
                   </h5>
                   <p className="text-base font-semibold leading-none text-gray-600">
-                    <b>Rp.</b>20000
+                    <b>Rp.</b>300.000
                   </p>
                 </div>
               </div>
@@ -57,7 +57,7 @@ const About = () => {
             <div className="h-48 md:h-64 lg:h-72 sm:block hidden rounded relative mt-6">
               <img
                 className="absolute rounded inset-0 w-full h-full object-cover object-center"
-                src="https://i.ibb.co/XSRytCy/img-3.png"
+                src="https://images.unsplash.com/photo-1601369177733-4e7ab43fcab3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
                 alt="bus"
               />
               <div className="px-6 py-4 bg-white absolute rounded-tr left-0 bottom-0">
@@ -65,7 +65,7 @@ const About = () => {
                   Eksekutif
                 </h5>
                 <p className="text-base font-semibold leading-none text-gray-600">
-                  <b>Rp.</b>40000
+                  <b>Rp.</b>400.000
                 </p>
               </div>
             </div>

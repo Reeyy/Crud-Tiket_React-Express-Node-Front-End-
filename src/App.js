@@ -5,6 +5,7 @@ import AddTiket from "./components/AddTiket";
 import TiketList from "./components/TiketList";
 import EditTiket from "./components/EditTiket";
 import About from "./components/About";
+import Pricing from "./components/Pricing";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/list" element={<TiketList />} />
       <Route path="/addtiket" element={<AddTiket />} />
       <Route path="list/edit/:id" element={<EditTiket />} />
+      <Route path="/Pricing" element={<Pricing />} />
     </Routes>
   );
 }
