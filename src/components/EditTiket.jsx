@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-
+import Swal from 'sweetalert2'
 const EditTiket = () => {
   const [name, setName] = useState("");
   const [nomorHp, setNomorHp] = useState();
@@ -29,7 +29,13 @@ const EditTiket = () => {
         hargaTiket,
         totalBayar,
       });
-
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Save Data Sukses',
+        showConfirmButton: false,
+        timer: 1500
+      })
       navigate("/list");
     } catch (error) {
       console.log(error);

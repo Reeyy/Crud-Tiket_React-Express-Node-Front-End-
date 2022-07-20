@@ -13,7 +13,7 @@ const Home = () => {
                   Hi There !
                 </div>
                 <div className="lg:text-2xl text-base tracking-tight f-f-l text-gray-700 lg:leading-8">
-                  Welcome To Tiket Bus AKAP
+                  Welcome To Tiket Bus <b className="text-gray-900">AKAP</b>
                 </div>
                 <button className="text-base md:text-xl lg:text-2xl  lg:leading-5 f-f-l underline text-left font-bold focus:outline-none text-black-color mt-4 md:mt-6 lg:mt-8">
                   Click here To get Started
@@ -33,13 +33,13 @@ const Home = () => {
                   Hi There !
                 </div>
                 <div className="text-base md:text-xl lg:text-2xl tracking-tight f-f-l text-gray-700 leading-8">
-                  Welcome To Tiket Bus AKAP
+                  Welcome To Tiket Bus <b className="text-gray-900">AKAP</b>
                 </div>
                 <Link
                   to="/about"
-                  className="text-base md:text-xl lg:text-2xl  lg:leading-5 f-f-l underline text-left font-bold focus:outline-none text-black-color mt-4 md:mt-6 lg:mt-8"
+                  className="text-base md:text-xl lg:text-2xl hover:text-gray-600 lg:leading-5 f-f-l text-left font-bold focus:outline-none text-black-color mt-4 md:mt-6 lg:mt-8"
                 >
-                  Click here To get Started
+                  Click here To get Started  👉
                 </Link>
               </div>
             </div>

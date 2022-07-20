@@ -15,10 +15,22 @@ const About = () => {
               transportasi darat.
             </p>
             <Link to="/list">
-              <span className="w-24 mt-6 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 flex items-start justify-center sm:justify-start px-8 py-4 bg-indigo-700 hover:bg-indigo-600 rounded text-base font-medium leading-none text-center text-white">
+              <span className="w-24 mt-6 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 flex items-start justify-center sm:justify-start px-8 py-4 bg-indigo-600 hover:bg-indigo-900 rounded text-base font-medium leading-none text-center text-white">
                 Tiket
+                <svg
+                className="z-40"
+                width={12}
+                height={8}
+                viewBox="0 0 12 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M8.01 3H0V5H8.01V8L12 4L8.01 0V3Z" fill="#242731" />
+              </svg>  
               </span>
+              
             </Link>
+  
           </div>
           <div className="md:w-1/2">
             <div className="sm:flex justify-between w-full h-auto">

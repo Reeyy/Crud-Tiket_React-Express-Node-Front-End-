@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import axios from "axios";
 import { CSVLink } from "react-csv";
+import Swal from 'sweetalert2'
 
 const TiketList = () => {
   const [users, setUsers] = useState([]);
-  const [exportData, setExportData] = useState([]);
+  console.log(users)
   const getUser = async () => {
     const res = await axios.get("http://localhost:5000/users");
     setUsers(res.data);
@@ -16,12 +17,44 @@ const TiketList = () => {
   }, []);
 
   const deleteUser = async (id) => {
-    try {
-      await axios.delete(`http://localhost:5000/users/${id}`);
-      getUser();
-    } catch (error) {
-      console.log(error);
-    }
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then(async(result) => {
+      if (result.isConfirmed) {
+
+
+        try {
+      
+          await axios.delete(`http://localhost:5000/users/${id}`);
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+          getUser();
+          
+        } catch (error) {
+          console.log(error);
+          Swal.fire(
+            'failed',
+            ` Eror : ${error}`,
+            'error'
+          )
+        }
+        
+      }
+    })
+
+
+
+
+   
   };
   return (
     <>
@@ -163,7 +196,7 @@ const TiketList = () => {
                     <button
                       onClick={() => deleteUser(user.id)}
                       className="inline-flex sm:ml-3 mt-4 sm:mt-0 items-start justify-start px-6 py-3 text-white bg-red-700 hover:bg-red-600 focus:outline-none rounded"
-                      to="/"
+                   
                     >
                       delete
                     </button>

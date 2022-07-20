@@ -1,9 +1,10 @@
-import axios from "axios";
+import axios from "axios"; 
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 const AddTiket = () => {
-  const [name, setName] = useState("");
+  const [name, setName] = useState(""); 
   const [nomorHp, setNomorHp] = useState(0);
   const [nomorKtp, setNomorKtp] = useState(0);
   const [kelas, setKelas] = useState("ekonomi");
@@ -28,7 +29,14 @@ const AddTiket = () => {
         hargaTiket,
         totalBayar,
       });
-
+      Swal.fire({
+        title: 'Thank you !😊',
+        text: 'Thank you for purchase',
+        imageUrl: 'https://images.unsplash.com/photo-1581799848741-f8e7fc0cd5ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+        imageWidth: 400,
+        imageHeight: 400,
+        imageAlt: 'Custom image',
+      })
       navigate("/list");
     } catch (error) {
       console.log(error);
